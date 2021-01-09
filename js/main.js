@@ -1,7 +1,7 @@
 let links = [
     {
         "label":"Week One",
-        "link":"week1/index.html"
+        "link":"week01/index.html"
     }
 ]
 
@@ -19,5 +19,4 @@ function createHTML(item) {
     a_item.href= item.link;
     li_item.appendChild(a_item);
     ol_parent.appendChild(li_item);
-
 }

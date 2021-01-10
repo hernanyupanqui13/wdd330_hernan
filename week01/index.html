@@ -3,6 +3,46 @@
 <head>
 <title>Week 01</title>
 <link href="../styles/main-styles.css" type="text/css" rel="stylesheet">
+<style>
+    textarea{
+        width:800px;
+        height: 250px;
+        background-color: lightyellow;
+        margin: 20px 0;;
+    }
+
+
+    button {
+        margin: 10px 5px;
+    }
+
+    .exersice_heading {
+        margin-bottom: 8px;
+    }
+
+
+
+</style>
+<script>
+    function loadStory() {
+        var storyName = document.getElementById("name_input").value;
+        var storyHTML = localStorage.getItem(storyName);
+        document.getElementById("story_editor").value = storyHTML;
+    }
+
+    function saveStory() {
+        var storyName = document.getElementById("name_input").value;
+        var storyHTML = document.getElementById("story_editor").value;
+        localStorage.setItem(storyName, storyHTML);
+    }
+    
+    function displayStory() {
+        var storyHTML = document.getElementById("story_editor").value;
+        let displaying_content = document.createElement("div");
+        displaying_content.innerHTML = storyHTML;
+        document.getElementById("story_display").appendChild(displaying_content);
+    }
+</script>
 </head>
 <body>
 
@@ -10,11 +50,20 @@
 
 <h2>Remembering Information Exercise</h2>
 
+<h3>Story Editor</h3>
+Story Name:<input id=name_input></input>
+<section>
+    <button onclick="loadStory()">Find and Edit It</button>
+    <button onclick="saveStory()">Save It</button>
+    <button onclick="displayStory()">Display It</button>
+</section>
+<textarea id="story_editor" placeholder="Write a totally awesome story here."></textarea>
+<section id="story_display">
+    <div class="exersice_heading"><strong>Displaying info: </strong></div>
+</section>
 
 
-
-
-
-<script src="js/main.js"></script>
 </body>
-</html>
+
+
+

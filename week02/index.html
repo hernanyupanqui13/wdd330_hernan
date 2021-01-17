@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Week 01</title>
+<link href="../styles/main-styles.css" type="text/css" rel="stylesheet">
+<style>
+
+
+</style>
+<script>
+
+function writeCode() {
+    const my_input = document.getElementById("my_input");
+    const my_div = document.getElementById("my_div");
+
+    my_div.innerHTML = my_input.value;  
+}
+
+/*=========================================================================*/
+
+function exersice2() {
+    const my_input = document.getElementById("my_input2");
+    const my_div = document.getElementById("my_div2");
+    my_div.innerHTML = la_suma(parseInt(my_input.value));  
+}
+
+const la_suma = function sumar(number) {
+    let the_sum = 0;
+
+    for(let i=number; i >= 1; i--) {
+        the_sum += i;
+    }
+
+    return the_sum;
+};
+
+/*=========================================================================*/
+
+function exersice3() {
+    const input_a = document.getElementById("input_a");
+    const input_b = document.getElementById("input_b");
+    const answer = document.getElementById("answer");
+
+    answer.innerHTML = la_adicion(parseInt(input_a.value), parseInt(input_b.value)) ;  
+}
+
+
+const la_adicion = (input_a, input_b) => {
+    return input_a + input_b;
+};
+
+</script>
+</head>
+<body>
+
+<h1>Week 02</h1>
+
+<h2>Part 1</h2>
+<input type="text" id="my_input">
+<button id="my_button" onclick="writeCode()">Click me</button>
+
+<div id="my_div"></div>
+
+
+<h2>Part 2</h2>
+<input type="text" id="my_input2">
+<button id="my_button2" onclick="exersice2('my_input2')">Click me</button>
+
+<div id="my_div2"></div>
+
+
+<h2>Part 3</h2>
+<input type="text" id="input_a">
+<button id="my_button3" onclick="exersice3()">+</button>
+<input type="text" id="input_b">
+
+<span id="answer"></span>
+
+
+
+</body>
+
+
+

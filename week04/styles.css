@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap');
+.wrapper {
+  font-family: 'Lato', sans-serif;
+}
+
+.center{   /**/
+  width: 800px;
+  display: block;
+  margin: 0px auto 0px auto;
+  padding: 0px;
+  overflow: auto;
+}
+
+.h1_tic {
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+  color: #272727;
+}
+
+.h2_tic {
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+  color: #272727;
+  font-weight: normal;
+}
+
+.gameboard { /**/
+  display: grid;
+  grid-template-columns: 100px 100px 100px;
+  grid-template-rows: 100px 100px 100px;
+  justify-content: center;
+  width: 300px;
+  margin: auto;
+}   /**/
+
+.gameboard > div {
+  border: 2px solid #261c3f;
+  font-size: 5em;
+  text-align: center;
+}
+
+div:nth-child(1n+1) {
+  border-top: none;
+}
+
+div:nth-child(1n+1) {
+  border-left: none;
+}
+
+div:nth-child(3n+3) {
+  border-right: none;
+}
+
+div:nth-child(1n+7) {
+  border-bottom: none;
+}
+
+#reset {
+  background-color:#5c19fa;
+  border-radius:9px;
+  font-family:Arial;
+  font-size:20px;
+  font-weight:bold;
+  color: #f8f8ff;
+}
+    
+#reset:hover {
+  background-color:#b990e0;
+}
+    
+#reset:active {
+position:relative;
+top:1px;    
+}
+    
+#buttondiv { /**/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h3 {
+  text-align: center;
+}

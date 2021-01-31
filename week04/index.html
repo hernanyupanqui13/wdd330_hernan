@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang='en'>
+<head>
+    <meta charset='utf-8'>
+    <title>Hero Form</title>
+    <link rel='stylesheet' href="./styles.css" type="text/css">
+</head>
+<link rel='stylesheet' href="../styles/main-styles.css" type="text/css">
+
+<body>
+    <h1>Week 04</h1>
+    <section>
+    <h2>Practicing Forms</h2>
+    <form id='hero'>
+        <label for='heroName'>Name:
+            <input type='text' id='heroName' name='heroName' autofocus placeholder='Your Super Hero Name' maxlength=32>
+        </label>
+        <button type='submit'>Submit</button>
+        <label for='donation-amount'>Enter amount to donate: 
+            <input type='text' id ='donation-amount' name='donationAmount' value='10'>
+        </label>
+        <label for='realName'>Real Name:
+            <input type='password' name='realName' id='realName'>
+        </label>
+
+        <p>Super Powers:</p>
+        <label for='flight'>Flight:
+            <input type='checkbox' id='flight' value='Flight' name='powers'>
+        </label>
+        <label for='strength'>Super Strength:
+            <input type='checkbox' id='strength' value='Strength' name='powers'>
+        </label>
+        <label for='speed'>Super Speed:
+            <input type='checkbox' id='speed' value='Super Speed' name='powers'>
+        </label>
+        <label for='energy'>Energy Blasts:
+            <input type='checkbox' id='energy' value='Energy Blasts' name='powers'>
+            </label>
+        <label for='telekinesis'>Telekinesis:
+            <input type='checkbox' id='telekinesis' value='Telekinesis' name='powers'>
+        </label>
+        
+    </form>
+    </section>
+    <br>
+    <br>
+    <section class="wrapper">
+    <h2 class="h1_tic">Team Assignment</h2>
+    <h3>Tic-Tac-Toe</h3>
+    <h4 class="center h2_tic" id="output"></h4>
+    <br>
+    <div class="gameboard" id="board">
+        <div id="1"></div>
+        <div id="2"></div>
+        <div id="3"></div>
+        <div id="4"></div>
+        <div id="5"></div>
+        <div id="6"></div>
+        <div id="7"></div>
+        <div id="8"></div>
+        <div id="9"></div>
+    </div>
+    <br>
+    <div id="buttondiv">
+        <button id="reset">Reset Game</button>
+    </div>
+    <h3 id="win_message"></h3>
+    <br>
+    <br>
+    </section>
+    <script src="tictac.js"></script>
+    <script src='main.js'></script>
+</body>
+</html>

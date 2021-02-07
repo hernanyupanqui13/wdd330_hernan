@@ -18,6 +18,10 @@ let links = [
     {
         "label":"Week Five",
         "link":"week05/index.html"
+    },
+    {
+        "label":"Challenge 1",
+        "link":"challenge_one/index.html"
     }
 ]
 

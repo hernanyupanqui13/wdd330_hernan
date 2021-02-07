@@ -1,0 +1,19 @@
+{
+  "name": "wdd330_hernan",
+  "version": "1.0.0",
+  "description": "Portfolio for projects and activities",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hernanyupanqui13/wdd330_hernan.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hernanyupanqui13/wdd330_hernan/issues"
+  },
+  "homepage": "https://github.com/hernanyupanqui13/wdd330_hernan#readme"
+}

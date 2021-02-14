@@ -6,16 +6,21 @@
     <link rel='stylesheet' href="./styles.css" type="text/css">
 </head>
 <body>
-<h1>Todos</h1>
-<h2>To Do List</h2>
+<div class="main_content">
+<h1><span class="half_1">To Do</span><span class="half_2">List</span></h1>
 <div>
     <ul class="todos_container">
 
     </ul>
-    <div class="todos_filter_bar"></div>
+    <div class="todos_filter_bar">
+        <div class="task_left">3 left</div>
+        <div class="separator"></div>
+        <div class="filter_item all_item filter_item_active">All</div>
+        <div class="filter_item active_item">Active</div>
+        <div class="filter_item complete_item">Complete</div>
+    </div>
 </div>
 
-<h2>Add new items</h2>
 <form class="add_bar">
     <textarea class="todo_description"></textarea>
     <button class="add_todo_button">+</button>
@@ -25,5 +30,6 @@
 
 
 <script src="script.js" type="module"></script>
+</div>
 </body>
 </html>

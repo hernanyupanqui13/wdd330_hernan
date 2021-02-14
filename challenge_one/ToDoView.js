@@ -2,6 +2,7 @@
 
 export default class ToDoView {
     constructor(controller) {
+        this.controller = controller;
         let self = this;
         this.add_button = document.querySelector(".add_todo_button");
         this.text_area = document.querySelector(".todo_description");
@@ -27,17 +28,36 @@ export default class ToDoView {
                     <span class="checkmark"></span>                    
                 </label>
                 <a class="delete_button container_bar">
-                    <div class="bar_1"></div>
-                    <div class="bar_2"></div>
+                    <div class="bar_1 bar"></div>
+                    <div class="bar_2 bar"></div>
                 </a>
 
             `;
+
             
 
             this.list_container.appendChild(li_item);            
 
             obj.html_element = li_item;
+            this.renderTheAccomplishment(obj)
+
         }
 
     }
+
+    renderTheAccomplishment(item) {
+        if (item.was_accomplished === true) {
+            item.html_element.querySelector(".container").classList.add("checked");
+        } else{
+            item.html_element.querySelector(".container").classList.remove("checked");
+        }
+        
+    }
+
+    renderCounter(number) {
+        document.querySelector(".task_left").innerHTML = `${number} left`;
+        console.log(number);
+    }
+
+    
 }

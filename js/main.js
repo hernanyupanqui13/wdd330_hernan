@@ -22,6 +22,10 @@ let links = [
     {
         "label":"Challenge 1",
         "link":"challenge_one/index.html"
+    },
+    {
+        "label":"Week Seven",
+        "link":"week07/index.html"
     }
 ]
 

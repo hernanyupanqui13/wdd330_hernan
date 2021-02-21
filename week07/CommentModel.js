@@ -13,10 +13,14 @@ export default class CommentModel {
     // commentList.push(new Comment('Hikes', 'Teton Canyon', 'My Fourth comment'));
 
     // get data from localStorage
-    commentList = JSON.parse(localStorage.getItem('comments'));
-    commentList.forEach(c => {
-      c.date = new Date(c.date)
-    });
+    if(localStorage.getItem('comments')) {
+      commentList = JSON.parse(localStorage.getItem('comments'));
+      commentList.forEach(c => {
+        c.date = new Date(c.date)
+      });
+    } else {
+      this.saveComments(commentList);
+    }
     return commentList;
   }
 

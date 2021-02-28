@@ -92,7 +92,7 @@ function renderItemFull(one_element, parent) {
 function requestData(the_url) {
     console.log("soy request data");
     
-    fetch(the_url)
+    fetch(the_url, {location: "https://swapi.dev/api/people"})
     .then(res => res.json())
     .then( res_to_json => {
         console.log(res_to_json);

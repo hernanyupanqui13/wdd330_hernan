@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Ranchers&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+
+h1 {
+    font-family: Ranchers, serif, sans-serif;
+}
+
+
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
+#search_form {
+    display: flex;
+    flex-direction: row;
+}
+
+ul {
+    padding: 5px;
+}
+
+li {
+    list-style: none;
+
+}
+
+.quake_item {
+    border-radius: 5px;
+    margin: 5px;
+    padding: 5px;
+    background-color: #F3F5F7;
+    cursor: pointer;
+}
+
+.quake_item:hover {
+    background-color: #E7EBEF;
+}
+
+
+.key_text {
+    font-weight: bold;
+    
+}

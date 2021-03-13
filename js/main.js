@@ -35,6 +35,11 @@ let links = [
         "label":"Week Nine",
         "link":"week09/index.html"
     }
+    ,
+    {
+        "label":"Week Ten",
+        "link":"week10/index.html"
+    }
 ]
 
 const ol_parent =  document.getElementById("main-links-container-id");

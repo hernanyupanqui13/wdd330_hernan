@@ -1,10 +1,4 @@
-/*let airport_code = "SPJC";
-
-getWeatherData(airport_code).then(a => console.log(a));
-
-
-
-function getWeatherData(airport_code) {
+export function getWeatherData(airport_code) {
     return fetch(`https://avwx.rest/api/metar/${airport_code}`
         , {
             headers: {
@@ -13,10 +7,4 @@ function getWeatherData(airport_code) {
         }
     )
     .then(response => response.json());
-}*/
-
-
-import WeatherController from './WeatherController.js';
-
-
-let controller = new WeatherController(".aviweather_root");
+}

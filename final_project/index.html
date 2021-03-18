@@ -5,10 +5,31 @@
   <title></title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="aviweather_root">
+<header>
+  <div class="logo_container"><img src="./assests/logo.png" alt="Logo AviWeather" class="logo_img"></div>
+  <h1>AviWeather</h1>
+</header>
+<form id="main_form">
+  <input type="text" id="airport_input" placeholder="Enter ICAO airport">
+  <button type="button">Reset</button>
+  <button type="submit">Send</button>
+</form>
+<section>
+  <h2>Response</h2>
+  <div class="response_output metar_info"></div>
+</section>
+<section>
+  <h2>Current Location</h2>
+  <div class="response_output"></div>
+</section>
+
+<section>
+  <h2>Recent Requests</h2>
+  <ul class="request_list"></ul>
+</section>
 
 
-
-
+<script src="./main.js" type="module"></script>
 </body>
 </html>

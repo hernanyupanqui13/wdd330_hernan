@@ -8,3 +8,9 @@ export function getWeatherData(airport_code) {
     )
     .then(response => response.json());
 }
+
+export function getLocation(options) {
+    return new Promise(function(resolve, reject) {
+        navigator.geolocation.getCurrentPosition(resolve, reject, options);
+    });
+};

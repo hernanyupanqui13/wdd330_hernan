@@ -56,7 +56,7 @@ export default class WeatherController {
         let lat = position.coords.latitude;
         let lon  = position.coords.longitude;
         
-        return fetch(`http://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=hourly,daily&appid=${a_key}`)
+        return fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=hourly,daily&appid=${a_key}`)
         .then(data => data.json());
     }
 

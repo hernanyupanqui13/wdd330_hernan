@@ -33,9 +33,10 @@ export default class WeatherView {
         const small_clouds = `<div class="small_clouds"><i class="fas fa-cloud"></i><i class="fas fa-cloud"></i><i class="fas fa-cloud"></i></div>`
         const raining = `<i class="fas fa-cloud-rain"></i>`;
         const snow = `<i class="fas fa-cloud-rain"></i>`;
-
+        
+        console.log(item_data);
         // If there was not an error in the request, we proceed
-        if(item_data.error === undefined) {
+        if(true) {
 
             let description = item_data.sanitized;
             let icon_to_show;
@@ -82,6 +83,9 @@ export default class WeatherView {
         document.querySelector(".request_list").innerHTML = loading_html;
         document.querySelector(".metar_info").innerHTML = "Nothing to show yet";
         document.querySelector(".current_pos_output").innerHTML = loading_html;
+        /*document.querySelector(".wind_arrow").style.visibility = "hidden";
+        document.querySelector(".cards_container").style.visibility = "hidden";*/
+        
     }
 
     renderTempIndicator(current_temp, deep_point, parentElement) {

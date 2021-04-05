@@ -32,18 +32,36 @@ export default class WeatherController {
         let self = this;
         let recent_data = this.model.getRecentRequest();
         let full_data = [];
+        let limit;
+        if (recent_data.length >= 9) {
+            limit = 9
+        } else {
+            limit = recent_data.length;
+        }
+        
 
 
-        for (let index = 0; index < recent_data.length; index++) {
+        for (let index = 0; index < limit; index++) {
             const element = recent_data[index];
             let one_data = await getWeatherData(element);
-            full_data.push(one_data);
+            if(one_data !== undefined) {
+                full_data.push(one_data);
+            }
             
         }
 
-        document.querySelector(".request_list").innerHTML = "";
+        console.log(full_data);
 
-        for (let index = 0; index < full_data.length; index++) {
+        document.querySelector(".request_list").innerHTML = "";
+        let limit_2;
+        if (full_data.length >= 9) {
+            limit_2 = 9
+        } else {
+            limit_2 = full_data.length;
+        }
+        
+
+        for (let index = 0; index < limit_2; index++) {
             const element = full_data[index];
             this.view.renderRecentRequestsItem(element);
         }
@@ -68,6 +86,7 @@ export default class WeatherController {
         c_pos_data = c_pos_data.current;
 
         parent_html.innerHTML = "";
+        document.querySelector(".cards_container").style.visibility = "visible";
 
         this.view.renderTempIndicator(Math.round(c_pos_data.temp-273.15)
             , Math.round(c_pos_data.dew_point-273.15)

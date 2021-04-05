@@ -276,11 +276,10 @@ button {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     margin-top: 10px;
-    padding-top: 15px;
 }
 
 .cards_container > div {
-    border: 1px solid black;
+    border: 3px solid black;
     margin-right: 5px;
     border-radius: 15px;
     padding: 8px;
@@ -339,8 +338,37 @@ button {
         flex-flow: row wrap;
         justify-content: space-evenly;
     }
-    
+
     .request_heading {
         text-align: center;
     }
+
+    
+}
+
+@media only screen and (max-width: 650px) {
+    .cards_container {
+        grid-template-columns: auto;
+    }
+
+    .wind_information, .temperature_information, .pressure_information {
+        margin: 0px;
+        margin-bottom: 8px;
+    }
+}
+
+
+.request_list .small_clouds i  {
+    font-size: 20px;
+    display: block;
+}
+
+.request_list .small_clouds i:nth-child(2)  {
+    position: relative;
+    margin-left: 20px;
+}
+
+.small_clouds {
+    grid-row: 1/4;
+    display: block;
 }

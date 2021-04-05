@@ -30,6 +30,7 @@ export default class WeatherView {
     renderRecentRequestsItem(item_data) {
         const cavok = `<i class="fas fa-sun"></i>`;
         const clouds = `<i class="fas fa-cloud"></i>`;
+        const small_clouds = `<div class="small_clouds"><i class="fas fa-cloud"></i><i class="fas fa-cloud"></i><i class="fas fa-cloud"></i></div>`
         const raining = `<i class="fas fa-cloud-rain"></i>`;
         const snow = `<i class="fas fa-cloud-rain"></i>`;
 
@@ -43,6 +44,8 @@ export default class WeatherView {
                 icon_to_show = cavok;
             } else if (/BKN/i.test(description) || /FEW/i.test(description) || /SCT/i.test(description) || /OVC/i.test(description)) {
                 icon_to_show = clouds;
+            } else {
+                icon_to_show = small_clouds;
             }
             
 

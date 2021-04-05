@@ -67,14 +67,8 @@ export default class WeatherController {
         
         c_pos_data = c_pos_data.current;
 
-        let temperature = Math.round((c_pos_data.temp - 273.15)* 100)/100 ;
+        parent_html.innerHTML = "";
 
-        parent_html.innerHTML = `
-            <div class="temp_cp">${temperature}</div>
-            <div class="qnh_cp">${c_pos_data.pressure}</div>
-            <div class="wind_info">${Math.round(c_pos_data.wind_deg)} kts at ${Math.round(c_pos_data.wind_speed)} deg
-
-        `
         this.view.renderTempIndicator(Math.round(c_pos_data.temp-273.15)
             , Math.round(c_pos_data.dew_point-273.15)
             , ".temperature_information"
@@ -83,7 +77,7 @@ export default class WeatherController {
 
         this.view.renderPressureIndicator(c_pos_data.pressure, ".pressure_information");
 
-        this.view.renderWindIndicator(170);
+        this.view.renderWindIndicator(c_pos_data.wind_deg, c_pos_data.wind_speed);
 
     }
 }

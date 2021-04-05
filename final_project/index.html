@@ -2,25 +2,26 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
   <title></title>
   <link rel="stylesheet" href="style.css">
   <script src="https://kit.fontawesome.com/dc5ae8b9ac.js" crossorigin="anonymous"></script>
 </head>
 <body class="aviweather_root">
-<header>
+<header class="body_child">
   <div class="logo_container"><img src="./assests/logo.png" alt="Logo AviWeather" class="logo_img"></div>
   <h1>AviWeather</h1>
 </header>
-<form id="main_form">
+<form id="main_form" class="main_form body_child">
   <button type="reset" class="second-btn btn">Reset</button>
   <input type="text" id="airport_input" placeholder="Enter ICAO airport" maxlength="4" minlength="4" >
   <button type="submit" class="main-btn btn">Send</button>
 </form>
-<section class="main_response">
+<section class="main_response body_child">
   <h2>Response</h2>
   <div class="response_output metar_info"></div>
 </section>
-<section class="current_location_section">
+<section class="current_location_section body_child">
   <h2>Current Location</h2>
   <div class="current_pos_output"></div>
   <div class="cards_container">
@@ -28,7 +29,11 @@
           
     </div>
     <div class="wind_information">
-      <div class="wind_arrow"><img src="./assests/wind.svg" alt="wind_arrow svg"></div>
+      <div class="cards_heading">Wind</div>
+      <div class="wind_arrow_container">
+        <div class="wind_arrow"><i class="fas fa-long-arrow-alt-up"></i></div>
+        <!--<div class="wind_arrow"><img src="./assests/wind.svg" alt="wind_arrow svg"></div>-->
+      </div>
       <div class="summary_info"></div>
     </div>
     <div class="pressure_information">
@@ -38,7 +43,7 @@
   
 </section>
 
-<section class="recent_request_section">
+<section class="recent_request_section body_child">
   <h2  class="request_heading">Recent Requests</h2>
   <ul class="request_list"></ul>
 </section>

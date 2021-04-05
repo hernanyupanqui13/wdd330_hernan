@@ -87,6 +87,7 @@ export default class WeatherView {
         container.classList.add("temp_item");
 
         let html_content = `
+            <div class="cards_heading">Temperature</div>
             <div class="vertical_bar">
                 <div class="indicator_1"></div>
                 <div class="label_1_indicator"></div>
@@ -127,6 +128,7 @@ export default class WeatherView {
         container.classList.add("press_item");
 
         let html_content = `
+            <div class="cards_heading">Pressure</div>
             <div class="vertical_bar">
                 <div class="indicator_1"></div>
                 <div class="label_1_indicator"></div>
@@ -161,9 +163,9 @@ export default class WeatherView {
         document.querySelector(parentElement).appendChild(container);
     }
 
-    renderWindIndicator(wind_deg) {
+    renderWindIndicator(wind_deg, wind_speed) {
         document.querySelector(".wind_arrow").style.transform = `rotate(${wind_deg}deg)`;
-        document.querySelector(".wind_information .summary_info").innerHTML = `${wind_deg} degrees`;
+        document.querySelector(".wind_information .summary_info").innerHTML = `${wind_deg} degrees - ${wind_speed} kts`;
     }
 
 }

@@ -1,5 +1,5 @@
 console.log("aqui estoy");
-const first_url = "https://swapi.dev/api/people";
+const first_url = "https://swapi.dev/api/starships";
 const button_next = document.querySelector(".button_next");
 const button_prev = document.querySelector(".button_prev");
 const list_container = document.querySelector(".people_list_container");
@@ -60,14 +60,14 @@ function renderItem(element) {
     html_content = `
             
         <div class="p_name"><strong class="p_label">Name: </strong>${element.name}</div>
-        <div class="p_height"><strong class="p_label">Height: </strong>${element.height}</div>
-        <div class="p_eye_color"><strong class="p_label">Eye Color: </strong>${element.eye_color}</div>
-        <div class="p_hair_color"><strong class="p_label">Hair Color: </strong>${element.hair_color}</div>
-        <div class="p_skin_color"><strong class="p_label">Skin Color: </strong>${element.skin_color}</div>
-        <div class="p_birth_year extra_info"><strong class="p_label">Birth Year: </strong>${element.birth_year}</div>
-        <div class="p_created extra_info"><strong class="p_label">Created: </strong>${element.created}</div>
-        <div class="p_mass extra_info"><strong class="p_label">Mass: </strong>${element.mass}</div>
-        <div class="p_edited extra_info"><strong class="p_label">Edited: </strong>${element.edited}</div>
+        <div class="p_height"><strong class="p_label">Cargo Capacity: </strong>${element.cargo_capacity}</div>
+        <div class="p_eye_color"><strong class="p_label">Consumables: </strong>${element.consumables}</div>
+        <div class="p_hair_color"><strong class="p_label">Const in Credits: </strong>${element.cost_in_credits}</div>
+        <div class="p_skin_color"><strong class="p_label">Passengers: </strong>${element.passengers}</div>
+        <div class="p_birth_year extra_info"><strong class="p_label">Startship Class: </strong>${element.starship_class}</div>
+        <div class="p_created extra_info"><strong class="p_label">Max Speed: </strong>${element.max_atmosphering_speed}</div>
+        <div class="p_edited extra_info"><strong class="p_label">Crew: </strong>${element.crew}</div>
+        <div class="p_mass extra_info"><strong class="p_label">Created: </strong>${element.created.slice(0,10)}</div>
 
     `
     parent_element.innerHTML = html_content;

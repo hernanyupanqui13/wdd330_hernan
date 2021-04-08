@@ -17,17 +17,13 @@ export default class WeatherView {
         this.airports_with_error = [];
     }
 
-
+    // This renders the main information of an airport
     renderMetar(data) {
         let container = document.querySelector(".metar_info");
         container.innerHTML = data.sanitized;
 
     }
 
-    
-    renderRecentRequests() {
-
-    }
 
     renderRecentRequestsItem(item_data) {
         const cavok = `<i class="fas fa-sun"></i>`;
@@ -73,7 +69,9 @@ export default class WeatherView {
 
     }
 
-    renderLoadingMessage() {
+    /*This renders the laoding message when we wait for the response. 
+    The target is the html container of the message*/
+    renderLoadingMessage(target=null) {
         
         let loading_html = `
             <div class="loading_msg"        
@@ -85,12 +83,13 @@ export default class WeatherView {
                 </div>
             </div>
         `;
-
-        document.querySelector(".request_list").innerHTML = loading_html;
-        document.querySelector(".metar_info").innerHTML = "Nothing to show yet";
-        document.querySelector(".current_pos_output").innerHTML = loading_html;
-        /*document.querySelector(".wind_arrow").style.visibility = "hidden";
-        document.querySelector(".cards_container").style.visibility = "hidden";*/
+        if (target === null) {
+            document.querySelector(".request_list").innerHTML = loading_html;
+            document.querySelector(".metar_info").innerHTML = "Nothing to show yet";
+            document.querySelector(".current_pos_output").innerHTML = loading_html;    
+        } else {
+            document.querySelector(target).innerHTML = loading_html;
+        }
         
     }
 
@@ -176,11 +175,13 @@ export default class WeatherView {
         document.querySelector(parentElement).appendChild(container);
     }
 
+    
     renderWindIndicator(wind_deg, wind_speed) {
         document.querySelector(".wind_arrow").style.transform = `rotate(${wind_deg}deg)`;
         document.querySelector(".wind_information .summary_info").innerHTML = `${wind_deg} degrees - ${wind_speed} kts`;
     }
 
+    // This renders te error message for the AJAX request
     renderErrorMessage() {
 
         let message = this.airports_with_error.join(", ")

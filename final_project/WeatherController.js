@@ -11,6 +11,7 @@ export default class WeatherController {
 
         this.view.main_form.addEventListener("submit", (event) => {
             event.preventDefault();
+            self.view.renderLoadingMessage(".response_output");
             let airport = self.view.main_form.querySelector("#airport_input").value;
             getWeatherData(airport)
             .then(data => {
@@ -19,8 +20,8 @@ export default class WeatherController {
             })
             .catch(e => {
                 self.view.airports_with_error.push(airport);
-                console.log(e);
                 self.view.renderErrorMessage();
+                document.querySelector(".response_output").innerHTML = "<div class='simple_error_msg'>Something went wrong, sorry</div>";
             });
         });
 
@@ -51,16 +52,12 @@ export default class WeatherController {
             let one_data = await getWeatherData(element).catch( e => {
                 self.view.airports_with_error.push(element);
                 self.view.renderErrorMessage();
-                console.log(e);
             });
             if(one_data !== undefined) {
                 full_data.push(one_data);
             }
             
         }
-
-        console.log(full_data);
-
         document.querySelector(".request_list").innerHTML = "";
         let limit_2;
         if (full_data.length >= 9) {
@@ -78,7 +75,6 @@ export default class WeatherController {
 
     async getCurrentPositionInfo() {
         let position = await getLocation();
-        console.log(position);
         let a_key = "f311bb8bcd320204349726acab80291a";
         let lat = position.coords.latitude;
         let lon  = position.coords.longitude;
@@ -89,7 +85,6 @@ export default class WeatherController {
 
     async renderCurrentPositionInfo() {
         let c_pos_data = await this.getCurrentPositionInfo();
-        console.log(c_pos_data);
         const parent_html = document.querySelector(".current_pos_output");
         
         c_pos_data = c_pos_data.current;

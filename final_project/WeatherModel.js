@@ -10,14 +10,14 @@ export default class WeatherModel {
         }
         
     }
-
+    // Saves the request in the localStorage
     saveRequest(url) {
         this.recent_requests.push(url)
         let self = this;
         localStorage.setItem("recent_aviweather_requests", JSON.stringify(self.recent_requests));
     }
-
+    // Return the last requests using the localStorage
     getRecentRequest() {
-        return [... new Set (this.recent_requests)];
+        return [... new Set (this.recent_requests)].reverse();
     }
 }

@@ -9,6 +9,7 @@ export function getWeatherData(airport_code) {
     .then(response => {
         if (!response.ok) {
             throw Error(response.statusText);
+    
         } else {
             return response.json();
         }

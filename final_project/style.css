@@ -363,6 +363,11 @@ button {
     visibility: visible;
 }
 
+.simple_error_msg {
+    color: red;
+    font-weight: bold;
+}
+
 
 
 

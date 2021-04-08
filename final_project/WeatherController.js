@@ -16,6 +16,11 @@ export default class WeatherController {
             .then(data => {
                 self.view.renderMetar(data); 
                 self.model.saveRequest(airport);
+            })
+            .catch(e => {
+                self.view.airports_with_error.push(airport);
+                console.log(e);
+                self.view.renderErrorMessage();
             });
         });
 
@@ -43,7 +48,11 @@ export default class WeatherController {
 
         for (let index = 0; index < limit; index++) {
             const element = recent_data[index];
-            let one_data = await getWeatherData(element);
+            let one_data = await getWeatherData(element).catch( e => {
+                self.view.airports_with_error.push(element);
+                self.view.renderErrorMessage();
+                console.log(e);
+            });
             if(one_data !== undefined) {
                 full_data.push(one_data);
             }

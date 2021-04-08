@@ -13,6 +13,8 @@ export default class WeatherView {
         });
 
         this.renderLoadingMessage();
+
+        this.airports_with_error = [];
     }
 
 
@@ -45,6 +47,10 @@ export default class WeatherView {
                 icon_to_show = cavok;
             } else if (/BKN/i.test(description) || /FEW/i.test(description) || /SCT/i.test(description) || /OVC/i.test(description)) {
                 icon_to_show = clouds;
+            } else if(/\w{0,}RA/i.test(description)){
+                icon_to_show = raining;
+            } else if(/\w{0,}RA/i.test(description)){
+                icon_to_show = snow;
             } else {
                 icon_to_show = small_clouds;
             }
@@ -173,6 +179,22 @@ export default class WeatherView {
     renderWindIndicator(wind_deg, wind_speed) {
         document.querySelector(".wind_arrow").style.transform = `rotate(${wind_deg}deg)`;
         document.querySelector(".wind_information .summary_info").innerHTML = `${wind_deg} degrees - ${wind_speed} kts`;
+    }
+
+    renderErrorMessage() {
+
+        let message = this.airports_with_error.join(", ")
+        const error_msg = document.querySelector(".error_message");
+        error_msg.innerHTML = `
+            Something went wrong with these airports: ${message.toUpperCase()}
+        `
+
+        error_msg.classList.add("error_active");
+
+        setTimeout(() => {
+            error_msg.classList.remove("error_active");
+        }, 3000);
+        this.airports_with_error = [];
     }
 
 }

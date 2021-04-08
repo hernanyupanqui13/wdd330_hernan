@@ -1,5 +1,5 @@
 console.log("aqui estoy");
-const first_url = "https://swapi.dev/api/starships";
+const first_url = "https://swapi.dev/api/starships/";
 const button_next = document.querySelector(".button_next");
 const button_prev = document.querySelector(".button_prev");
 const list_container = document.querySelector(".people_list_container");
